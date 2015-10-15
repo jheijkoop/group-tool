@@ -1,2 +1,3 @@
 GET        /myversion        controllers.Application.version
-GET        /*apiRoute        @controllers.Proxy.forwardGet(apiRoute)
+#GET        /*apiRoute        @controllers.Proxy.forwardGet(apiRoute)
+GET        /webjars/*file    controllers.WebJarAssets.at(file)
