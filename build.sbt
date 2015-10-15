@@ -15,13 +15,12 @@ scalacOptions := Seq(
   "-unchecked",
   "-deprecation",
   "-Xlog-reflective-calls",
-  "-Xfatal-warnings",
-  "-Ywarn-unused"
+  "-Xfatal-warnings"
 )
 
 libraryDependencies ++= Seq(
   ws,
-  "org.webjars" %% "webjars-play" % "2.4.0",
+  "org.webjars" %% "webjars-play" % "2.4.0-1",
   "org.scalatest" %% "scalatest" % "2.2.4" % "test",
   "org.scalatestplus" %% "play" % "1.4.0-M3" % "test",
   "org.webjars" % "react" % "0.13.3",
