@@ -1,0 +1,2 @@
+GET        /myversion        controllers.Application.version
+GET        /*apiRoute        @controllers.Proxy.forwardGet(apiRoute)
