@@ -1,11 +1,9 @@
 package controllers
 
-import play.api.mvc.{AnyContent, Request, Action, Controller}
-
-import scala.collection.mutable
+import models.Meetups
+import play.api.mvc.{Action, AnyContent, Controller, Request}
 
 object Main extends Controller {
-  var meetups = Map.empty[String, String]
   def index = Action {
     Ok(views.html.index())
   }
@@ -16,19 +14,23 @@ object Main extends Controller {
       val name = form("name").head
       val description = form("description").head
 
-      meetups = meetups + (name -> description)
+      Meetups.add(name -> description)
 
-      println(meetups)
+      println(Meetups.list)
 
-      Redirect("/create")
+      Redirect("/view")
     } else {
       Ok(views.html.create())
     }
 
   }
 
+  def list = Action {
+    Ok(views.html.meetups(Meetups.list))
+  }
+
   def view(name: String) = Action {
-    meetups.get(name)
+    Meetups.list.get(name)
       .map(description => Ok(views.html.view(name, description)))
       .getOrElse(Redirect("/create"))
   }

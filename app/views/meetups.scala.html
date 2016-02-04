@@ -1,0 +1,14 @@
+@(meetups: Map[String, String])
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <tile>All the meetups</tile>
+  </head>
+  <body>
+    <h1>These are all the meetups</h1>
+    <ul>
+      @meetups.map { meetup => <li>@meetup._1</li> }
+    </ul>
+  </body>
+</html>
