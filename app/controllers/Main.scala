@@ -26,4 +26,10 @@ object Main extends Controller {
     }
 
   }
+
+  def view(name: String) = Action {
+    meetups.get(name)
+      .map(description => Ok(views.html.view(name, description)))
+      .getOrElse(Redirect("/create"))
+  }
 }
