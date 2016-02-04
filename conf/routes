@@ -1,4 +1,6 @@
 GET         /                 controllers.Main.index
+GET         /create           controllers.Main.create
+POST        /create           controllers.Main.create
 GET         /myversion        controllers.Application.version
 #GET         /*apiRoute        @controllers.Proxy.forwardGet(apiRoute)
 GET         /webjars/*file    controllers.WebJarAssets.at(file)
