@@ -8,7 +8,7 @@
   <body>
     <h1>These are all the meetups</h1>
     <ul>
-      @meetups.map { meetup => <li>@meetup._1</li> }
+      @meetups.map { meetup => <li><a href="@routes.Main.view(meetup._1)">@meetup._1</a></li> }
     </ul>
   </body>
 </html>
